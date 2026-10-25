@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StyleMatch — Find Your Perfect Outfit</title>
+
+  <!-- Google Fonts: Poppins untuk heading, Inter untuk body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner container">
+      <a href="#home" class="logo">
+        <span class="logo__dots" aria-hidden="true">
+          <span class="dot dot--pink"></span>
+          <span class="dot dot--brown"></span>
+          <span class="dot dot--cream"></span>
+        </span>
+        StyleMatch
+      </a>
+
+      <!-- Menu untuk desktop -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#explore" class="nav-link">Explore</a>
+        <a href="#color-match" class="nav-link">Color Match</a>
+        <a href="#outfit-finder" class="nav-link">Outfit Finder</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <!-- Tombol hamburger untuk mobile -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO SECTION ===================== -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="eyebrow">Your personal style companion</span>
+          <h1 class="hero__title">
+            Find Your <span class="highlight">Perfect Outfit</span>
+          </h1>
+          <p class="hero__subtitle">
+            Discover outfit inspiration and perfect color combinations for every occasion.
+          </p>
+          <div class="hero__actions">
+            <a href="#outfit-finder" class="btn btn--primary">Explore Outfit</a>
+            <a href="#color-match" class="btn btn--outline">Try Color Match</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="hero__stat">
+              <strong>110</strong>
+              <span>Outfit Ideas</span>
+            </div>
+            <div class="hero__stat">
+              <strong>12</strong>
+              <span>Signature Styles</span>
+            </div>
+            <div class="hero__stat">
+              <strong>73</strong>
+              <span>Color Palettes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ilustrasi fashion modern (dibuat murni dengan SVG, tanpa gambar eksternal) -->
+        <div class="hero__illustration" aria-hidden="true">
+          <svg viewBox="0 0 320 440" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+            <!-- lingkaran latar lembut -->
+            <circle cx="160" cy="220" r="185" fill="#F7EFE5" />
+            <circle cx="255" cy="110" r="52" fill="#F3D9DC" opacity="0.8" />
+            <circle cx="55" cy="330" r="40" fill="#EAD9C4" opacity="0.9" />
+
+            <!-- bayangan lembut di bawah kaki -->
+            <ellipse cx="160" cy="410" rx="70" ry="12" fill="#E3A9AE" opacity="0.18" />
+
+            <!-- kaki -->
+            <rect x="132" y="330" width="16" height="70" rx="8" fill="#E3C2A5" />
+            <rect x="172" y="330" width="16" height="70" rx="8" fill="#E3C2A5" />
+            <!-- sepatu -->
+            <ellipse cx="140" cy="404" rx="16" ry="8" fill="#6B4F3F" />
+            <ellipse cx="180" cy="404" rx="16" ry="8" fill="#6B4F3F" />
+
+            <!-- lengan kiri & kanan, menggantung lembut di samping dress -->
+            <path d="M118 132 C96 150 84 190 92 232 C95 246 104 256 116 258
+                     C112 244 108 226 110 206 C112 180 122 156 132 140 Z"
+                  fill="#E3C2A5" />
+            <path d="M202 132 C224 150 236 190 228 232 C225 246 216 256 204 258
+                     C208 244 212 226 210 206 C208 180 198 156 188 140 Z"
+                  fill="#E3C2A5" />
+
+            <!-- dress: bahu ramping, pinggang dicekik, melebar ke bawah (A-line) -->
+            <path d="M160 118
+                     C144 118 130 126 128 140
+                     C126 152 132 160 128 172
+                     C112 196 100 240 98 288
+                     C97 306 100 322 106 336
+                     L214 336
+                     C220 322 223 306 222 288
+                     C220 240 208 196 192 172
+                     C188 160 194 152 192 140
+                     C190 126 176 118 160 118 Z"
+                  fill="#B08968" />
+
+            <!-- belt pinggang -->
+            <rect x="132" y="196" width="56" height="9" rx="4.5" fill="#6B4F3F" opacity="0.55" />
+
+            <!-- leher -->
+            <rect x="149" y="96" width="22" height="26" rx="8" fill="#E3C2A5" />
+
+            <!-- kepala -->
+            <circle cx="160" cy="70" r="32" fill="#E3C2A5" />
+
+            <!-- rambut, disanggul rapi -->
+            <path d="M129 62 C126 36 144 18 160 18 C178 18 196 36 191 62
+                     C191 48 182 40 172 40 C168 48 156 50 148 46
+                     C140 50 130 54 129 62 Z"
+                  fill="#6B4F3F" />
+            <circle cx="160" cy="26" r="11" fill="#6B4F3F" />
+
+            <!-- tas selempang kecil, detail fashion -->
+            <path d="M204 190 L226 250" stroke="#6B4F3F" stroke-width="4" stroke-linecap="round" />
+            <rect x="206" y="246" width="30" height="24" rx="6" fill="#E3A9AE" />
+
+            <!-- palette dots melayang, identitas brand -->
+            <circle cx="272" cy="230" r="9" fill="#E3A9AE" />
+            <circle cx="290" cy="200" r="6" fill="#B08968" />
+            <circle cx="262" cy="180" r="5" fill="#F7EFE5" stroke="#E3A9AE" stroke-width="2"/>
+
+            <circle cx="48" cy="150" r="8" fill="#E3A9AE" />
+            <circle cx="30" cy="180" r="5" fill="#B08968" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== OUTFIT FINDER SECTION ===================== -->
+    <section class="section" id="outfit-finder">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Outfit Finder</span>
+          <h2>Temukan Outfit Sesuai Momenmu</h2>
+          <p class="section__desc">
+            Pilih acara, gaya favorit, dan warna kesukaanmu — biarkan StyleMatch menyusunkan rekomendasi outfit yang pas.
+          </p>
+        </div>
+
+        <!-- Form filter Outfit Finder -->
+        <div class="finder-card">
+          <div class="finder-grid">
+            <div class="field">
+              <label for="occasionSelect">Occasion</label>
+              <select id="occasionSelect">
+                <option value="all">Semua Acara</option>
+                <option value="Casual">Casual</option>
+                <option value="Date">Date</option>
+                <option value="Party">Party</option>
+                <option value="Office">Office</option>
+                <option value="Vacation">Vacation</option>
+                <option value="Wedding">Wedding</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="styleSelect">Style</label>
+              <select id="styleSelect">
+                <option value="all">Semua Style</option>
+                <option value="Korean">Korean</option>
+                <option value="Clean Girl">Clean Girl</option>
+                <option value="Old Money">Old Money</option>
+                <option value="Streetwear">Streetwear</option>
+                <option value="Coquette">Coquette</option>
+                <option value="Minimalist">Minimalist</option>
+                <option value="Y2K">Y2K</option>
+                <option value="Cottagecore">Cottagecore</option>
+                <option value="Preppy">Preppy</option>
+                <option value="Boho Chic">Boho Chic</option>
+                <option value="Dark Academia">Dark Academia</option>
+                <option value="Balletcore">Balletcore</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="colorSelect">Favorite Color</label>
+              <select id="colorSelect">
+                <option value="all">Semua Warna</option>
+                <option value="Cream">Cream</option>
+                <option value="White">White</option>
+                <option value="Pink">Pink</option>
+                <option value="Brown">Brown</option>
+                <option value="Black">Black</option>
+                <option value="Beige">Beige</option>
+                <option value="Grey">Grey</option>
+                <option value="Navy">Navy</option>
+                <option value="Denim">Denim</option>
+                <option value="Khaki">Khaki</option>
+                <option value="Terracotta">Terracotta</option>
+                <option value="Mustard">Mustard</option>
+                <option value="Burgundy">Burgundy</option>
+                <option value="Sage">Sage</option>
+                <option value="Dusty Rose">Dusty Rose</option>
+              </select>
+            </div>
+
+            <button class="btn btn--primary finder-btn" id="findOutfitBtn">Find Outfit</button>
+          </div>
+        </div>
+
+        <!-- Hasil rekomendasi outfit -->
+        <div class="finder-results" id="finderResults">
+          <p class="finder-placeholder">
+            Atur filter di atas lalu klik <strong>Find Outfit</strong> untuk melihat rekomendasi ✨
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== COLOR MATCH SECTION ===================== -->
+    <section class="section section--soft" id="color-match">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Color Match</span>
+          <h2>Cocokkan Warna Favoritmu</h2>
+          <p class="section__desc">
+            Pilih satu warna, dan kami akan tunjukkan warna pasangan terbaik, contoh outfit, dan rekomendasi aksesorinya.
+          </p>
+        </div>
+
+        <!-- Palet warna yang bisa dipilih -->
+        <div class="color-picker" id="colorPicker">
+          <!-- swatch akan digenerate lewat JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRENDING OUTFIT SECTION ===================== -->
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Explore</span>
+          <h2>Trending Outfit</h2>
+          <p class="section__desc">Tampilan yang benar-benar sedang naik di musim ini, dari tren Fall/Winter 2026 sampai prediksi Pinterest.</p>
+          <p class="trend-note">
+            Diperbarui Oktober 2026 · Dirangkum dari
+            <a href="https://www.whowhatwear.com/fashion/trends/autumn-winter-2026-trends" target="_blank" rel="noopener noreferrer">Who What Wear</a>,
+            <a href="https://www.womanandhome.com/fashion/autumn-winter-fashion-trends-2026/" target="_blank" rel="noopener noreferrer">Woman &amp; Home</a>,
+            <a href="https://shop.mango.com/us/en/discover/trends/women/fall-winter-fashion-trends-how-to-stand-out-this-season_bltd1dc684b2b6bb934" target="_blank" rel="noopener noreferrer">Mango</a>, dan
+            <a href="https://fashionunited.com/news/fashion/poetcore-opera-aesthetic-and-brooches-key-style-predictions-from-pinterest-for-2026/2025121069575" target="_blank" rel="noopener noreferrer">Pinterest Predicts 2026</a>.
+          </p>
+        </div>
+
+        <!-- Search bar untuk mencari outfit -->
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Cari outfit, style, atau warna..." />
+          <span class="search-icon" aria-hidden="true">🔍</span>
+        </div>
+
+        <div class="trending-grid" id="trendingGrid">
+          <!-- kartu trending outfit digenerate lewat JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FASHION TIPS SECTION ===================== -->
+    <section class="section section--soft" id="fashion-tips">
+      <div class="container">
+        <div class="section__header">
+          <span class="eyebrow">Fashion Tips</span>
+          <h2>Belajar Gaya Lebih Percaya Diri</h2>
+          <p class="section__desc">Artikel singkat seputar mix & match, warna, dan tren terbaru.</p>
+        </div>
+
+        <div class="tips-grid" id="tipsGrid">
+          <!-- kartu artikel digenerate lewat JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT SECTION ===================== -->
+    <section class="section about" id="about">
+      <div class="container about__inner">
+        <div class="about__text">
+          <span class="eyebrow">About StyleMatch</span>
+          <h2>Fashion Companion, Bukan Toko Online</h2>
+          <p>
+            StyleMatch dibuat untuk perempuan usia 16–30 tahun yang mencintai fashion tapi sering bingung
+            memadupadankan outfit. Kami tidak menjual pakaian — kami membantumu menemukan kombinasi gaya
+            dan warna yang paling cocok untukmu, untuk acara apa pun.
+          </p>
+          <div class="about__points">
+            <div class="about__point">
+              <span class="dot dot--pink"></span>
+              Rekomendasi berdasarkan occasion, style, dan warna favorit
+            </div>
+            <div class="about__point">
+              <span class="dot dot--brown"></span>
+              Color matching sederhana untuk hasil yang selalu serasi
+            </div>
+            <div class="about__point">
+              <span class="dot dot--cream"></span>
+              Tips fashion praktis untuk dipakai sehari-hari
+            </div>
+          </div>
+
+          <!-- Catatan penggunaan foto -->
+          <div class="about__note">
+            <h4>Catatan Penggunaan Foto</h4>
+            <p>
+              Foto-foto outfit di website ini adalah contoh referensi gaya yang diambil dari Pinterest,
+              bukan hasil jepretan pembuat website. Hak cipta tetap dimiliki oleh pemilik masing-masing foto,
+              dan sumbernya dicantumkan di bawah setiap gambar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== MODAL DETAIL OUTFIT ===================== -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card" id="modalCard">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Tutup">&times;</button>
+      <div id="modalContent"><!-- konten detail outfit digenerate lewat JavaScript --></div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="logo logo--footer">
+          <span class="logo__dots" aria-hidden="true">
+            <span class="dot dot--pink"></span>
+            <span class="dot dot--brown"></span>
+            <span class="dot dot--cream"></span>
+          </span>
+          StyleMatch
+        </a>
+        <p>Temukan outfit dan warna yang paling cocok untukmu, setiap hari.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Menu</h4>
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#color-match">Color Match</a>
+        <a href="#outfit-finder">Outfit Finder</a>
+        <a href="#about">About</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@palettefit.com">stylematch.youroutfit@gmail.com</a>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <p class="footer__disclaimer">
+      Website ini dibuat murni untuk memenuhi tugas akademik dan tidak digunakan untuk tujuan komersial.
+      Foto outfit adalah referensi gaya dari Pinterest, bukan karya pembuat website.
+    </p>
+    <p class="footer__copyright">© 2026 StyleMatch</p>
+  </footer>
+
+  <!-- Tombol scroll to top -->
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Kembali ke atas">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
